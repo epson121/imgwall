@@ -1,0 +1,8 @@
+INDEX VERSION 1.126+/home/luka/Documents/dev/BEST code/slikoZid/.metadata/.plugins/org.eclipse.jdt.core
+2674011975.index
+1876525575.index
+2289930475.index
+1710161676.index
+3808253341.index
+3053541162.index
+2602803262.index

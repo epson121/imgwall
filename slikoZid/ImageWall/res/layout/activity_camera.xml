@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/mondrain_composition_op2"
+    android:gravity="center" >
+
+	 <ImageView
+        android:id="@+id/taken_picture"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="76dp"
+        android:contentDescription="@string/img_background" 
+        />
+
+	 <Button
+	     android:id="@+id/btn_back_to_main"
+	     android:layout_width="110dp"
+	     android:layout_height="wrap_content"
+	     android:layout_alignParentBottom="true"
+	     android:layout_alignParentRight="true"
+	     android:layout_marginBottom="10dp"
+	     android:layout_marginRight="30dp"
+	     android:background="#FFFFFF"
+	     android:drawableTop="@drawable/back_to_main_logo"
+	     android:text="@string/btn_back_to_main_menu"
+	     android:textSize="15sp" />
+
+	 <Button
+	     android:id="@+id/btn_upload"
+	     android:layout_width="110dp"
+	     android:layout_height="wrap_content"
+	     android:layout_alignParentBottom="true"
+	     android:layout_alignParentLeft="true"
+	     android:layout_marginBottom="10dp"
+	     android:layout_marginLeft="30dp"
+	     android:background="#FFFFFF"
+	     android:drawableTop="@drawable/upload_icon"
+	     android:text="@string/btn_upload"
+	     android:textSize="15sp" />
+
+</RelativeLayout>

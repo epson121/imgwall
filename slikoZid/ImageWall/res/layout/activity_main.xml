@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/mondrain_composition_op2" >
+
+	 <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/logo_logo"
+        android:contentDescription="@string/img_background" 
+        />
+	 
+	 <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/img_background" 
+        />
+
+    <Button
+        android:id="@+id/btn_use_camera"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="158dp"
+        android:background="#FFFFFFFF"
+        android:drawableTop="@drawable/camera_icon"
+        android:text="@string/btn_take_picture" />
+
+    <Button
+        android:id="@+id/btn_up_from_file"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/btn_use_camera"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="#FBFBEF"
+        android:drawableTop="@drawable/data_file_icon"
+        android:text="@string/btn_choose_picture"
+        />
+
+</RelativeLayout>

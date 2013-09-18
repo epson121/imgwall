@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">imageWall</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">imageWall</string>
+
+ 	<string name="btn_take_picture">Take picture with Camera</string>
+    <string name="btn_upload_from_file">Upload picture from Files</string>
+    <string name="btn_choose_picture">Choose Picture</string>
+    <string name="btn_upload">Upload</string>
+    <string name="btn_back_to_main_menu">Go Back</string>
+    <string name="lbl_enter_tag">Or enter new One:</string>
+    <string name="lbl_upload_successfull">Picture is uploaded. Thank you for sharing!</string>
+    <string name="lbl_choose_tag">Choose existing TAG:</string>
+    <string name="img_background">Background image</string>
+</resources>
