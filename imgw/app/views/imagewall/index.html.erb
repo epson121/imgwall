@@ -1,0 +1,30 @@
+<%= javascript_include_tag 'jquery-1.7.2.min' %>
+<%= stylesheet_link_tag 'lightbox' %>
+
+<div id = "header">
+	<a href = "<%= imagewall_index_path %>"><h1 id = "title">imageWall</h1></a>
+</div>
+<div id = "page_container">
+	<div id = "images">
+		<% if (@images != nil)%>
+			<% @images.each do |image|%>
+			<div id = "image_container" >
+				<a href = <%= "/assets/" + image.image_name%> rel="lightbox[sth]">
+					<%= image_tag(image.image_name, :size => "180x180",  :alt => image.image_name) %>
+				</a>
+			</div>
+			<% end %>
+		<% end%>
+	</div>
+
+	<div id = "tag_container">
+		Tags:
+		<div id="tag_cloud">
+		  <% tag_cloud Image.tag_counts, %w[s m l] do |tag, css_class| %>
+		    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+		  <% end %>
+		</div>
+	</div>
+</div>
+
+

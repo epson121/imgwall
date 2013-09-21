@@ -1,0 +1,70 @@
+// Place all the styles related to the imagewall controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body{height:100%;}
+
+#header
+{
+	
+	text-align: center;
+}
+
+#header #title
+{
+	margin-top: -10px;
+	font-size:9em;
+	color: #8AD459;
+	font-family: monospace;
+}
+#page_container
+{
+	height:100%;
+}
+
+#tag_container
+{
+	width:10%;
+	float:left;
+	margin-left: 2%;
+}
+
+#tag_cloud 
+{
+  line-height: 1.8em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+#images
+{
+	width:82%;
+	float:left;
+	margin-left: 8px;
+	margin-top: 8px;
+	padding-top: 1%;
+	border-right: 2px solid #8ad459;
+	border-top: 2px solid #8ad459;
+}
+
+#image_container
+{
+	float:left;
+	padding: 8px;	
+	width: 180px;
+	height: 160px;
+
+}
+
+
+.lb-outerContainer
+{
+	max-width: 640px;
+	max-height: 480px;
+}
+
+.lb-dataContainer
+{
+	max-width: 640px;
+	max-height: 480px;
+}

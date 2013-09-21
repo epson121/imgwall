@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Image - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/image.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-distance">::distance</a>
+    
+    <li><a href="#method-c-in_range">::in_range</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Image.html">Image</a>
+  
+    <li><a href="./ImagewallController.html">ImagewallController</a>
+  
+    <li><a href="./ImagewallHelper.html">ImagewallHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Image</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-distance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">distance</span><span
+            class="method-args">(a, b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>calculate the distance between two point using haversine formula</p>
+          
+
+          
+          <div class="method-source-code" id="distance-source">
+            <pre><span class="ruby-comment"># File app/models/image.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">distance</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+  <span class="ruby-comment">#calculate degree -&gt; radian conversion rate</span>
+  <span class="ruby-identifier">rad_per_deg</span> = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span><span class="ruby-operator">/</span><span class="ruby-value">180</span>  
+  <span class="ruby-comment">#set Earth radius in km</span>
+  <span class="ruby-identifier">rkm</span> = <span class="ruby-value">6371</span>             
+  <span class="ruby-comment">#set Earth radius in m</span>
+  <span class="ruby-identifier">rm</span> = <span class="ruby-identifier">rkm</span> * <span class="ruby-value">1000</span>       
+
+  <span class="ruby-comment">#calculate distance between corresponding coordinate points in radians</span>
+  <span class="ruby-identifier">dlon_rad</span> = (<span class="ruby-identifier">b</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">a</span>[<span class="ruby-value">1</span>]) * <span class="ruby-identifier">rad_per_deg</span> 
+  <span class="ruby-identifier">dlat_rad</span> = (<span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>]) * <span class="ruby-identifier">rad_per_deg</span>
+
+  <span class="ruby-comment">#get lattitude and longitude in radians</span>
+  <span class="ruby-identifier">lat1_rad</span>, <span class="ruby-identifier">lon1_rad</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">map!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> * <span class="ruby-identifier">rad_per_deg</span> }
+  <span class="ruby-identifier">lat2_rad</span>, <span class="ruby-identifier">lon2_rad</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">map!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> * <span class="ruby-identifier">rad_per_deg</span> }
+
+  <span class="ruby-comment">#calculate the distance</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">dlat_rad</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">lat1_rad</span>) * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">lat2_rad</span>) * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">dlon_rad</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">**</span><span class="ruby-value">2</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-value">2</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">asin</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">a</span>))
+
+  <span class="ruby-comment">#return distance in meters</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">rm</span> * <span class="ruby-identifier">c</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- distance-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- distance-method -->
+
+    
+      <div id="method-c-in_range" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_range</span><span
+            class="method-args">(latp, lngp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_range-source">
+            <pre><span class="ruby-comment"># File app/models/image.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">in_range</span>(<span class="ruby-identifier">latp</span>, <span class="ruby-identifier">lngp</span>)
+  <span class="ruby-comment">#find all images</span>
+              <span class="ruby-ivar">@tags</span> = <span class="ruby-constant">Image</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>)
+
+  <span class="ruby-comment">#set some temporary arrays</span>
+              <span class="ruby-ivar">@near_tags</span> = []
+  <span class="ruby-ivar">@nt</span> = []
+
+  <span class="ruby-comment">#for each image</span>
+              <span class="ruby-ivar">@tags</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span>
+
+    <span class="ruby-comment">#check if distance is smaller than 50 (m)</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">distance</span>([<span class="ruby-identifier">latp</span>, <span class="ruby-identifier">lngp</span>],[(<span class="ruby-identifier">tag</span>[<span class="ruby-value">:lat</span>].<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">7</span>) , (<span class="ruby-identifier">tag</span>[<span class="ruby-value">:lng</span>].<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">7</span>)]) <span class="ruby-operator">&lt;</span> <span class="ruby-value">50</span>
+
+      <span class="ruby-comment">#check if there is already the same tag in array</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@near_tags</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">tag</span>[<span class="ruby-value">:tag</span>]
+
+        <span class="ruby-comment">#add to arrays</span>
+        <span class="ruby-ivar">@near_tags</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>[<span class="ruby-value">:tag</span>]
+        <span class="ruby-ivar">@nt</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>
+      <span class="ruby-keyword">end</span>
+
+          <span class="ruby-keyword">end</span>
+
+              <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">#return nearest tags</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_range-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_range-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
